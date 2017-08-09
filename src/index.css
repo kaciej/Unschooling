@@ -1,0 +1,324 @@
+body{
+    background-color: #FDFDF3;
+    color: black;
+    font-family: 'Special Elite', cursive;
+    height: 100vh;
+}
+
+.app-wrapper{
+    height: 100%;
+}
+
+#root{
+    height: 100%;
+}
+
+/************************/
+/*NAVBAR*/
+/*************************/
+.navbar{
+    line-height: 4;
+    background-color: #FDFDF3;
+    border-bottom-color: black;
+    margin-bottom: 0 !important;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 3;
+}
+
+.nav-title{
+    display: inline;
+    margin-left: 20px;
+    font-weight: bolder;
+    padding: 15px;
+}
+
+.nav-links{
+    display: inline;
+    float: right;
+    margin-right: 100px;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #6BAE7D !important;
+    text-decoration: none;
+}
+
+.nav-home{
+    padding: 15px;
+    color:black;
+}
+
+.nav-post{
+    padding: 15px;
+    color: black;
+    
+}
+/*************************/
+/*HEADER*/
+/*************************/
+.header-img{
+    background-image: url("http://jeremiahpeters.com/wp-content/uploads/2015/07/mountain-pasture_00450519.jpg");
+    background-image: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    margin-top: 50px;
+}
+
+.header{
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height:60vh;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header-btn{
+    margin-bottom: 70px;
+    margin-top: 30px;
+    width: 160px;
+    font-size: 18px;
+    color: white;
+    background-color: #6BAE7D;
+}
+
+.header-title{
+    font-family: 'Satisfy', cursive;
+    font-size: 73px;
+    color: white;
+}
+
+.header-quote{
+    font-family: 'Special Elite', cursive;
+    position: relative;
+    z-index: 2;
+    color: white;
+}
+
+/*************************
+Search
+*************************/
+
+.search-container{
+    position: relative;
+    z-index: 2;
+    background-color: #FDFDF3;
+    height: 5vh;
+}
+
+.search-desc{
+    font-size: 18px;
+}
+
+.home-dropdown{
+    width: 100px;
+    margin-left: 10px;
+    border: none;
+}
+
+.search-btn{
+    margin-top: 10px;
+    background-color: orange;
+}
+
+
+/*************************/
+/*BODY*/
+/*************************/
+
+.white-box{
+    background-color: #FDFDF3;
+    flex: 1;
+    overflow: auto;
+    position: relative;
+    z-index: 2;
+    top: 60vh;
+    bottom: 15vh;
+    left: 0;
+    right: 0;
+}
+
+.body-container{
+    padding-top: 50px;
+}
+
+.posts{
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.home-imgs{
+    width:100%;
+    height: 25vh;
+    background-image: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 2px;
+    margin-bottom: 20px;
+}
+
+.body-title{
+    font-size: 18px;
+}
+
+.vote-btn{
+    margin-bottom: 20px;
+    margin-top: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+}
+
+.body-current-vote{
+    display: inline;
+    margin: 10px;
+    font-size: 14;
+}
+
+.delete{
+    background-color: transparent;
+    color: red;
+    float: left;
+    border: none;
+}
+/*************************/
+/*FORM*/
+/*************************/
+.form-inputs{
+    margin: 20px;
+}
+
+.form-header{
+    margin-bottom: 50px;
+    margin-top: 15vh;
+}
+
+.form-btn{
+    width: 200px;
+    font-size: 25px;
+    margin-bottom: 20vh;
+}
+
+.subject-title{
+    font-size: 20px;
+}
+
+select{
+    width: 100%;
+    height: 3vh;
+    background-color: transparent;
+}
+
+/*************************/
+/*POST*/
+/*************************/
+
+.post-title{
+    margin-top: 10vh;
+}
+
+.post-img{
+    width: 700px;
+    height: 45vh;
+    border-radius: 5px;
+    background-image: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 5vh auto;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.overlay {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: rgba(66, 66, 66, 0.5);
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.post-img:hover .overlay {
+    opacity: 1;
+}
+
+.post-desc{
+    font-size: 18px;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.add-comment-btn{
+   margin: 30px;
+}
+
+.post-heart-btn{
+    background-color: transparent;
+    border: none;
+    color: white;
+    display: inline;
+}
+
+.post-current-vote{
+    font-size: 20px;
+    display: inline;
+    color: white;
+}
+
+.comment-form{
+    margin: 20px;
+}
+
+.comment-container{
+    display: inline-flex;
+    margin: 10px;
+}
+
+.comment-btns{
+    background-color: transparent;
+    border:  none;
+}
+
+/*************************/
+/*FOOTER*/
+/*************************/
+footer{
+    background-color: #FDFDF3;
+    padding: 15px;
+    text-align: center;
+    margin-top: 5vh;
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    /*bottom: 0;*/
+}
+
+.icons{
+    color: black;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.comment-box{
+    color: black;
+}
+
+
+
+
+
+
