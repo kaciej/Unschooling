@@ -10,18 +10,31 @@ class SearchContainer extends Component {
         super();
         this.state = {
             subject: "",
-            Age: ""
+            age: ""
         }
+        autoBind(this);
     }
     handleChange(key, event) {
         this.setState({
             [key]: event.target.value
         });
     }
+    handleSubmit() {
+        let queryobj = {};
+        if(this.state.subject) {
+            queryobj.subject = this.state.subject;
+        }
+        if(this.state.age) {
+            queryobj.age = this.state.age;
+        }
+        this.props.loadDataByQuery(queryobj);
+    }
     render() {
         return (
             <div>
-                <Search handleChange={this.handleChange}
+                <Search handleSubmit={this.handleSubmit}
+                    input={this.state}
+                    handleChange={this.handleChange}
                     handleSubject={this.props.loadDataByQuery} />
             </div>
         );

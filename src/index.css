@@ -1,5 +1,4 @@
 body{
-    background-color: #FDFDF3;
     color: black;
     font-family: 'Special Elite', cursive;
     height: 100vh;
@@ -19,7 +18,6 @@ body{
 .navbar{
     line-height: 4;
     background-color: #FDFDF3;
-    border-bottom-color: black;
     margin-bottom: 0 !important;
     position: fixed;
     width: 100%;
@@ -49,12 +47,10 @@ a:hover {
 
 .nav-home{
     padding: 15px;
-    color:black;
 }
 
 .nav-post{
     padding: 15px;
-    color: black;
     
 }
 /*************************/
@@ -68,7 +64,7 @@ a:hover {
     width: 100%;
     position: fixed;
     z-index: 1;
-    margin-top: 50px;
+    margin-top: 60px;
 }
 
 .header{
@@ -124,7 +120,7 @@ Search
 }
 
 .search-btn{
-    margin-top: 10px;
+    margin-top: 15px;
     background-color: orange;
 }
 
@@ -291,6 +287,10 @@ select{
 .comment-btns{
     background-color: transparent;
     border:  none;
+}
+
+.edit-input{
+    width: 900px;
 }
 
 /*************************/

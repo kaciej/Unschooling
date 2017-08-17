@@ -2,7 +2,7 @@ import axios from "axios";
 
 export function loadData() {
     return(dispatch) => {
-        axios.get("http://localhost:8080/vote/").then((response) => {
+        axios.get("/vote/").then((response) => {
             dispatch(setData(response.data.data));
         }).catch((error) => {
             return error;
@@ -11,20 +11,26 @@ export function loadData() {
 }
 
 //Search Function
-export function loadDataByQuery(str) {
-    // let queryStr = "";
+export function loadDataByQuery(queryObj) {
+    let queryStr = "";
+    for(let key in queryObj) {
+        queryStr += key;
+        queryStr += "=";
+        queryStr += queryObj[key];
+        queryStr += "&"
+    }
     return(dispatch) => {
-        axios.get(`http://localhost:8080/vote?subject=${str}`).then((response) => {
-            dispatch(setSubject(response.data.data));
+        axios.get(`/vote/${queryStr}`).then((response) => {
+            dispatch(loadData(response.data.data))
         }).catch((error) => {
-            return error;
+            throw error;
         });
     }
 }
 
 export function deleteData(id) {
     return(dispatch) => {
-        axios.delete(`http://localhost:8080/vote/${id}`).then((response) => {
+        axios.delete(`/vote/${id}`).then((response) => {
             dispatch(loadData())
         }).catch((error) => {
             return error;
@@ -34,7 +40,7 @@ export function deleteData(id) {
 
 export function addData(data) {
     return(dispatch) => {
-        axios.post("http://localhost:8080/vote/", data).then((response) => {
+        axios.post("/vote/", data).then((response) => {
             dispatch(loadData())
         }).catch((error) => {
             return error;
@@ -45,7 +51,7 @@ export function addData(data) {
 //Put
 export function updateData(id, data) {
     return(dispatch) => {
-        axios.put(`http://localhost:8080/vote/${id}`, data).then((response) => {
+        axios.put(`/vote/${id}`, data).then((response) => {
             dispatch(loadData())
         }).catch((error) => {
             return error;
@@ -56,7 +62,7 @@ export function updateData(id, data) {
 //Votes
 export function updateUp(id) {
     return(dispatch) => {
-        axios.put(`http://localhost:8080/vote/upVote/${id}`).then((response) => {
+        axios.put(`/vote/upVote/${id}`).then((response) => {
             dispatch(loadData());
             dispatch(loadDataById(id));
         }).catch((error) => {
@@ -67,7 +73,7 @@ export function updateUp(id) {
 
 export function updateDown(id) {
     return(dispatch) => {
-        axios.put(`http://localhost:8080/vote/downVote/${id}`).then((response) => {
+        axios.put(`/vote/downVote/${id}`).then((response) => {
             dispatch(loadData());
             dispatch(loadDataById(id));
         }).catch((error) => {
@@ -78,7 +84,7 @@ export function updateDown(id) {
 
 export function loadDataById(id) {
     return(dispatch) => {
-        axios.get(`http://localhost:8080/vote/${id}`).then((response) => {
+        axios.get(`/vote/${id}`).then((response) => {
             dispatch(setCurrentPost(response.data.data))
         }).catch((error) => {
             return error;
@@ -89,7 +95,7 @@ export function loadDataById(id) {
 //Comments
 export function loadCommentsById(id) {
     return(dispatch) => {
-        axios.get(`http://localhost:8080/comment/?voteId=${id}`).then((response) => {
+        axios.get(`/comment/?voteId=${id}`).then((response) => {
             dispatch(setComments(response.data.data));
         }).catch((error) => {
             return error;
@@ -99,7 +105,7 @@ export function loadCommentsById(id) {
 
 export function addComment(id, data) {
     return(dispatch) => {
-        axios.post(`http://localhost:8080/comment/?voteId=${id}`, data).then((response) => {
+        axios.post(`/comment/?voteId=${id}`, data).then((response) => {
             dispatch(loadCommentsById(id))
         }).catch((error) => {
             return error;
@@ -109,7 +115,7 @@ export function addComment(id, data) {
 
 export function deleteCommentById(commentId, postId) {
     return(dispatch) => {
-        axios.delete(`http://localhost:8080/comment/${commentId}`).then((response) => {
+        axios.delete(`/comment/${commentId}`).then((response) => {
             dispatch(loadCommentsById(postId));
         }).catch((error) => {
             return error;
@@ -119,7 +125,7 @@ export function deleteCommentById(commentId, postId) {
 
 export function updateComment(postId, id, data) {
     return(dispatch) => {
-        axios.put(`http://localhost:8080/comment/${id}`, data).then((response) => {
+        axios.put(`/comment/${id}`, data).then((response) => {
             dispatch(loadCommentsById(postId));
         }).catch((error) => {
             return error;
@@ -147,13 +153,6 @@ function setCurrentPost (data) {
 function setComments (data) {
     return {
         type: "SET_COMMENT",
-        data
-    }
-}
-
-function setSubject (data) {
-    return {
-        type: "SET_SUBJECT",
         data
     }
 }

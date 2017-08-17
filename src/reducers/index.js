@@ -2,7 +2,8 @@ let defaultState = {
     posts: [],
     currentPost: {},
     comments: [],
-    subject: []
+    subject: "",
+    age: ""
 }
 
 const mainReducer = (state = defaultState, action) => {
