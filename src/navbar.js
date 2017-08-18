@@ -13,12 +13,12 @@ class Navbar extends Component {
         autoBind(this);
     }
     changeNav() {
-        if(document.location.pathname === "/" && window.scrollY > 545) {
+        if(document.location.pathname === "/#/" && window.scrollY > 545) {
             this.setState({
                 backgroundColor: "rgba(0, 0, 0, 0.5)",
                 color: "#FDFDF3"
             }) 
-        } else if (document.location.pathname === "/" && window.scrollY < 540) {
+        } else if (document.location.pathname === "/#/" && window.scrollY < 540) {
             this.setState({
                 backgroundColor: "#FDFDF3",
                 color: "black"
@@ -37,7 +37,7 @@ class Navbar extends Component {
         return (
             <div className="navbar" style={{backgroundColor:this.state.backgroundColor}}>
                 <div className="nav-links">
-                    <Link className="nav-home" style={{color:this.state.color}} to="/">HOME</Link>
+                    <Link className="nav-home" style={{color:this.state.color}} to="/#/">HOME</Link>
                     <Link className="nav-post" style={{color:this.state.color}} to="/form/">SHARE IDEA</Link>
                     <Link className="nav-post" style={{color:this.state.color}} to="/signin/">SIGN IN</Link>
                 </div>
