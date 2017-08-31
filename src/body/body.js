@@ -7,8 +7,8 @@ class Body extends Component {
     render() {
         return (
             <div className="col-md-3 col-sm-6 col-xs-6 posts">
-                <button onClick={() => {this.props.deletePost(this.props.post._id)}} 
-                    className="delete">X</button>
+                {/*<button onClick={() => {this.props.deletePost(this.props.post._id)}} 
+                    className="delete">X</button>*/}
                 <Link to={`/${this.props.post._id}`}>
                     <div className="home-imgs" 
                         style={{backgroundImage:`url("${this.props.post.img}")`}}>
