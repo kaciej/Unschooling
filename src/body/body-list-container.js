@@ -7,6 +7,7 @@ import * as actionCreators from "../actions/";
 class BodyListContainer extends Component {
     componentWillMount() {
         this.props.loadData()
+        console.log("get");
     }
     render() {
         return (

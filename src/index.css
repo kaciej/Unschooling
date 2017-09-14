@@ -104,9 +104,10 @@ Search
 
 .search-container{
     position: relative;
-    z-index: 2;
+    z-index: 1;
     background-color: #FDFDF3;
     height: 5vh;
+    margin-bottom: 20px;
 }
 
 .search-desc{
@@ -119,11 +120,14 @@ Search
     border: none;
 }
 
+.search-type{
+    margin-top: 15px;
+}
+
 .search-btn{
     margin-top: 15px;
     background-color: orange;
 }
-
 
 /*************************/
 /*BODY*/

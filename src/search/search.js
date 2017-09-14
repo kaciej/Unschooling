@@ -4,11 +4,9 @@ class Search extends Component {
     render() {
         return (
             <div className="search-container container">
-                <div className="row">
-                    <button onClick={this.props.handleSubmit} className="btn search-btn">Search</button>
-                </div>
-                <div className="row">
-                    <div className="col-md-6">
+                
+                <div className="row search-type">
+                    <div className="col-md-6 col-sm-6 col-xs-6">
                         <span className="search-desc">Subject: </span>
                         <select onChange={(event) => {this.props.handleChange("subject", event)}}
                                  className="home-dropdown" value={this.props.input.subject}>
@@ -21,7 +19,7 @@ class Search extends Component {
                             <option value="other">Other</option>
                         </select>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-6 col-sm-6 col-xs-6">
                         <span className="search-desc">Age: </span>
                         <select onChange={(event) => {this.props.handleChange("age", event)}}
                                 value={this.props.input.age} className="home-dropdown">
@@ -36,6 +34,9 @@ class Search extends Component {
                             <option value="15-18">15-18</option>
                         </select>
                     </div>
+                </div>
+                <div className="row search-btn-row">
+                    <button onClick={this.props.handleSubmit} className="btn search-btn">Search</button>
                 </div>
             </div>
         );

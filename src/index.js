@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 
 //router
-import  { Route, HashRouter, Switch } from "react-router-dom";
+import  { Route, BrowserRouter, Switch } from "react-router-dom";
 
 //import components
 import FormContainer from "./form/form-container.js";
@@ -30,7 +30,7 @@ const store = createStore(reducers, applyMiddleware(thunk));
 class App extends Component {
     render() {
         return (
-        <HashRouter>
+        <BrowserRouter>
             <Scroll>
                 <div className="app-wrapper">
                     <Navbar />
@@ -41,7 +41,7 @@ class App extends Component {
                         </Switch>
                 </div>
             </Scroll>  
-        </HashRouter> 
+        </BrowserRouter> 
         );
     }
 }

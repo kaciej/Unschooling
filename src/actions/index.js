@@ -1,8 +1,10 @@
 import axios from "axios";
 
+//GET
 export function loadData() {
     return(dispatch) => {
-        axios.get("/vote/").then((response) => {
+        axios.get("http://localhost:8080/vote").then((response) => {
+             console.log(response.data.data);
             dispatch(setData(response.data.data));
         }).catch((error) => {
             return error;
@@ -28,6 +30,7 @@ export function loadDataByQuery(queryObj) {
     }
 }
 
+//DELETE
 export function deleteData(id) {
     return(dispatch) => {
         axios.delete(`/vote/${id}`).then((response) => {
@@ -59,7 +62,7 @@ export function updateData(id, data) {
     }
 }
 
-//Votes
+//VOTES
 export function updateUp(id) {
     return(dispatch) => {
         axios.put(`/vote/upVote/${id}`).then((response) => {

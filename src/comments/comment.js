@@ -25,7 +25,7 @@ class Comment extends Component {
                         <FontAwesome name="trash" size="lg"></FontAwesome>
                     </button>
                               
-                    <button onClick={() => {this.props.updateComment(this.props.currentPost._id, this.props.input._id, this.props.input),this.props.toggleEdit()}} 
+                    <button onClick={() => {this.props.updateComment(this.props.currentPost._id, this.props.input._id, this.props.input); this.props.toggleEdit();}} 
                         style={{display:this.props.input.edit ? "inherit": "none"}} 
                         className="comment-btns">
                         <FontAwesome name="floppy-o" size="lg"></FontAwesome>
